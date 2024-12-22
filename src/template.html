@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+  </head>
+  <body>
+    <header class="header">
+      <div>Todo List</div>
+    </header>
+
+    <div class="todo-list">
+      <div class="todo-list-creation">
+        <form id="todo-form" class="todo-form" action="">
+          <!-- Title Input -->
+          <input
+            type="text"
+            class="todo-title-input"
+            placeholder="Enter your todo item title"
+            required
+          />
+
+          <!-- Description Input -->
+          <input
+            type="text"
+            class="todo-desc-input"
+            placeholder="Enter your todo item description"
+            required
+          />
+
+          <!-- Date Input -->
+          <input type="date" class="todo-date-input" required />
+
+          <!-- Priority Selection -->
+          <fieldset class="todo-priority-input">
+            <legend>Select a task priority</legend>
+            <div class="priority-input">
+              <input
+                type="radio"
+                name="priority"
+                id="todo-low-priority"
+                value="Low"
+                required
+              />
+              <label for="todo-low-priority">Low</label>
+            </div>
+            <div class="priority-input">
+              <input
+                type="radio"
+                name="priority"
+                id="todo-med-priority"
+                value="Medium"
+              />
+              <label for="todo-med-priority">Medium</label>
+            </div>
+            <div class="priority-input">
+              <input
+                type="radio"
+                name="priority"
+                id="todo-high-priority"
+                value="High"
+              />
+              <label for="todo-high-priority">High</label>
+            </div>
+          </fieldset>
+
+          <!-- Add New Project -->
+          <fieldset class="add-projects">
+            <label class="project-input" for="assign-projects">
+              Assign to a project:
+            </label>
+
+            <!-- Assign to Project Dropdown -->
+            <select class="projects assign-projects" name="projects">
+              <option value="Default">Default</option>
+            </select>
+
+            <!-- New Project Name -->
+            <input
+              type="text"
+              class="new-project-input"
+              placeholder="Enter a new project name"
+              id="new-project-name"
+            />
+
+            <!-- Add Project Button -->
+            <button type="button" class="add-project-button" form="todo-form">
+              Add New Project
+            </button>
+          </fieldset>
+        </form>
+
+        <!-- Create Todo Button -->
+        <div class="todo-create">
+          <button type="button" class="todo-create-button" form="todo-form">
+            Create Todo Item
+          </button>
+        </div>
+      </div>
+
+      <!-- Todo Item Display Section -->
+      <div id="todo-items-wrapper">
+        <fieldset class="display-projects">
+          <label class="display-projects-label" for="display-projects">
+            Display Project Group
+          </label>
+
+          <!-- Display Project Group Dropdown -->
+          <select
+            class="show-projects"
+            name="display-projects"
+            id="display-projects"
+          >
+            <option value="Default">Default</option>
+            <option value="All">All</option>
+          </select>
+        </fieldset>
+        <div id="content"></div>
+      </div>
+    </div>
+  </body>
+
+  <script type="module" src="index.js"></script>
+</html>
